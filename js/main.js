@@ -323,22 +323,69 @@ window.addEventListener("load", () =>{
 
 /* ---------------- contact api js ----------- */
 
-function SendEmail() {
-	Email.send({
-	Host : "smtp.elasticemail.com",
-	Username : "kouserad@gmail.com",
-	Password : "E3C4B5AF718F4D99B856E2621DDB02042EE9",
-	To : 'kouserphone@gmail.com',
-	From : "kouserad@gmail.com" ,
-	Subject : "This is the subject",
-	Body : "Name: " + document.getElementById("name").value +
-	"<br> Email: " + document.getElementById("email").value +
-	"<br> Subject: " + document.getElementById("subject").value +
-	"<br> Message: " + document.getElementById("message").value
-	}).then(
-	message => alert("Message Send Successfully")
-	);
-}
+// function SendEmail() {
+// 	Email.send({
+// 	Host : "smtp.elasticemail.com",
+// 	Username : "kouserad@gmail.com",
+// 	Password : "E3C4B5AF718F4D99B856E2621DDB02042EE9",
+// 	To : 'kouserphone@gmail.com',
+// 	From : "kouserad@gmail.com" ,
+// 	Subject : "This is the subject",
+// 	Body : "Name: " + document.getElementById("name").value +
+// 	"<br> Email: " + document.getElementById("email").value +
+// 	"<br> Subject: " + document.getElementById("subject").value +
+// 	"<br> Message: " + document.getElementById("message").value
+// 	}).then(
+// 	message => alert("Message Send Successfully")
+// 	);
+// }
+/* ---------------- contact From Google Script ----------- */
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwAC7PREip2y_4akD5svmz1evvxO0mD2IbkD44H1_Ekjc6fTR89-brbwUR0iUmQ98_Xwg/exec'
+  const form = document.getElementById('contact-form')
+  const btn = document.getElementById('submit-btn')
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    btn.disabled = true
+    btn.innerText = "Sending..."
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        // সুন্দর সাকসেস মেসেজ
+        Swal.fire({
+          title: 'Success!',
+          text: 'ধন্যবাদ! আপনার মেসেজটি সফলভাবে পাঠানো হয়েছে।',
+          icon: 'success',
+          confirmButtonText: 'ঠিক আছে',
+          confirmButtonColor: '#ff0055' // আপনার থিমের সাথে মিল রেখে কালার দিন
+        })
+        
+        btn.disabled = false
+        btn.innerText = "Send Message"
+        form.reset()
+      })
+      .catch(error => {
+        // সুন্দর এরর মেসেজ
+        Swal.fire({
+          title: 'Error!',
+          text: 'দুঃখিত, কিছু একটা সমস্যা হয়েছে।',
+          icon: 'error',
+          confirmButtonText: 'আবার চেষ্টা করুন'
+        })
+        btn.disabled = false
+        btn.innerText = "Send Message"
+      })
+
+      Swal.fire({
+ 		 toast: true,
+  		 position: 'top-end',
+  		 showConfirmButton: false,
+  		 timer: 3000,
+  		 timerProgressBar: true,
+  		 icon: 'success',
+  		 title: 'মেসেজ পাঠানো হয়েছে!'
+		})
+  })
 
 
 
