@@ -21,6 +21,7 @@
   <link rel="stylesheet" type="text/css" class="alternate-style" title="color-5" href="css/skins/color-5.css" disabled>
   <link rel="stylesheet" type="text/css" href="css/style-switcher.css">
   <link rel="icon" href="img/fav icon.png" type="image/x-icon"/>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -756,7 +757,7 @@
         </div>
         <!-- contact item end -->
       </div>
-      <div class="row">
+      <!-- <div class="row">
         <div class="contact-form">
           <form onsubmit= "SendEmail(); reset(); return false;">
             <div class="row">
@@ -784,7 +785,43 @@
             </div>
           </form>
         </div>
+      </div> -->
+
+
+
+      <div class="row">
+        <div class="contact-form">
+          <form id="contact-form">
+            <div class="row">
+              <div class="w-50">
+                <div class="input-group outer-shadow hover-in-shadow">
+                  <input type="text" name="name" id="name" placeholder="Name" class="input-control" required>
+                </div>
+                <div class="input-group outer-shadow hover-in-shadow">
+                  <input type="text" name="email" id="email" placeholder="Email" class="input-control" required>
+                </div>
+                <div class="input-group outer-shadow hover-in-shadow">
+                  <input type="text" name="subject" id="subject" placeholder="subject" class="input-control" required>
+                </div>
+              </div>
+              <div class="w-50">
+                <div class="input-group outer-shadow hover-in-shadow">
+                  <textarea id="message" name="message" class="input-control" placeholder="Message"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="submit-btn">
+                <button type="submit" class="btn-1 outer-shadow hover-in-shadow" id="submit-btn">Send Message</button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
+
+
+
+      
     </div>
   </section>
   <!-- contact section end -->
