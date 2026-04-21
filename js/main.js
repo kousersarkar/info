@@ -354,9 +354,9 @@ window.addEventListener("load", () =>{
         // সুন্দর সাকসেস মেসেজ
         Swal.fire({
           title: 'Success!',
-          text: 'ধন্যবাদ! আপনার মেসেজটি সফলভাবে পাঠানো হয়েছে।',
+          text: 'Thank you! Your message has been sent successfully.',
           icon: 'success',
-          confirmButtonText: 'ঠিক আছে',
+          confirmButtonText: 'Success',
           confirmButtonColor: '#ff0055' // আপনার থিমের সাথে মিল রেখে কালার দিন
         })
         
@@ -368,9 +368,9 @@ window.addEventListener("load", () =>{
         // সুন্দর এরর মেসেজ
         Swal.fire({
           title: 'Error!',
-          text: 'দুঃখিত, কিছু একটা সমস্যা হয়েছে।',
+          text: 'Sorry, Something went wrong.',
           icon: 'error',
-          confirmButtonText: 'আবার চেষ্টা করুন'
+          confirmButtonText: 'Please Try Again.'
         })
         btn.disabled = false
         btn.innerText = "Send Message"
@@ -383,7 +383,7 @@ window.addEventListener("load", () =>{
   		 timer: 3000,
   		 timerProgressBar: true,
   		 icon: 'success',
-  		 title: 'মেসেজ পাঠানো হয়েছে!'
+  		 title: 'মYour message has been sent successfully.'
 		})
   })
 
