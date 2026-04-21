@@ -383,7 +383,7 @@ window.addEventListener("load", () =>{
   		 timer: 3000,
   		 timerProgressBar: true,
   		 icon: 'success',
-  		 title: 'মYour message has been sent successfully.'
+  		 title: 'Your message has been sent successfully.'
 		})
   })
 
