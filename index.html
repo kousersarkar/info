@@ -880,19 +880,35 @@
   <!-- style switcher end -->
 
 
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6a115451db67011c34f85264/1jp9r2nst';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+<!--Start Live Chat Script-->
+<div class="chat-footer">
+    <input type="text" id="customerMsg" placeholder="Write a reply...">
+    <button onclick="sendToWhatsApp()">➤</button>
+</div>
+
+<script>
+    function toggleChat() {
+        const chatBox = document.getElementById('chatBox');
+        chatBox.style.display = (chatBox.style.display === "flex") ? "none" : "flex";
+    }
+
+    function sendToWhatsApp() {
+        // আপনার হোয়াটসঅ্যাপ নাম্বারটি এখানে দিন (কান্ট্রি কোডসহ, যেমন: 88017XXXXXXXX)
+        const myPhoneNumber = "88017XXXXXXXX"; 
+        
+        // ইউজারের লেখা মেসেজটি নেওয়া হচ্ছে
+        const userMessage = document.getElementById('customerMsg').value;
+        
+        if(userMessage.trim() !== "") {
+            // মেসেজটি হোয়াটসঅ্যাপের লিঙ্কে কনভার্ট করা হচ্ছে
+            const whatsappUrl = `https://wa.me/${myPhoneNumber}?text=${encodeURIComponent(userMessage)}`;
+            
+            // নতুন ট্যাবে হোয়াটসঅ্যাপ ওপেন হবে
+            window.open(whatsappUrl, '_blank');
+        }
+    }
 </script>
-<!--End of Tawk.to Script-->
+<!--End Live Chat Script-->
 
 
 <!-- Contact API js -->
