@@ -881,33 +881,7 @@
 
 
 <!--Start Live Chat Script-->
-<div class="chat-footer">
-    <input type="text" id="customerMsg" placeholder="Write a reply...">
-    <button onclick="sendToWhatsApp()">➤</button>
-</div>
 
-<script>
-    function toggleChat() {
-        const chatBox = document.getElementById('chatBox');
-        chatBox.style.display = (chatBox.style.display === "flex") ? "none" : "flex";
-    }
-
-    function sendToWhatsApp() {
-        // আপনার হোয়াটসঅ্যাপ নাম্বারটি এখানে দিন (কান্ট্রি কোডসহ, যেমন: 88017XXXXXXXX)
-        const myPhoneNumber = "8801750880802"; 
-        
-        // ইউজারের লেখা মেসেজটি নেওয়া হচ্ছে
-        const userMessage = document.getElementById('customerMsg').value;
-        
-        if(userMessage.trim() !== "") {
-            // মেসেজটি হোয়াটসঅ্যাপের লিঙ্কে কনভার্ট করা হচ্ছে
-            const whatsappUrl = `https://wa.me/${myPhoneNumber}?text=${encodeURIComponent(userMessage)}`;
-            
-            // নতুন ট্যাবে হোয়াটসঅ্যাপ ওপেন হবে
-            window.open(whatsappUrl, '_blank');
-        }
-    }
-</script>
 <!--End Live Chat Script-->
 
 
