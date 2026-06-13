@@ -22,6 +22,7 @@
   <link rel="stylesheet" type="text/css" href="css/style-switcher.css">
   <link rel="icon" href="img/fav icon.png" type="image/x-icon"/>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -880,9 +881,49 @@
   <!-- style switcher end -->
 
 
-<!--Start Live Chat Script-->
+<<!--------- Popup Chat Start ----------->
 
-<!--End Live Chat Script-->
+  <div class="chat-btn" onclick="toggleChat()">
+      <!-- <img src="https://cdn-icons-png.flaticon.com/512/134/134914.png" width="20" alt=""> -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-headset-icon lucide-headset"><path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z"/><path d="M21 16v2a4 4 0 0 1-4 4h-5"/></svg>
+      <span>Hello</span>
+  </div>
+
+  <div class="chat-box outer-shadow" id="chatBox">
+    <div class="chat-header">
+      <!-- <img src="https://www.robi.com.bd/assets/images/robi-logo.png" alt="Logo" width="60"> -->
+      <h4>Contact With Kouser.</h4>
+      <span class="close-btn" onclick="toggleChat()">&times;</span>
+    </div>
+    <div class="chat-content">
+      <div class="row">
+        <div class="contact-form">
+
+          <form id="popup-contact-form">
+            <div class="row">
+                <div class="input-group outer-shadow hover-in-shadow">
+                  <input type="text" name="name" placeholder="Name" class="input-control" required>
+                </div>
+                <div class="input-group outer-shadow hover-in-shadow">
+                  <input type="email" name="email" placeholder="Email" class="input-control" required>
+                </div>
+                <div class="input-group outer-shadow hover-in-shadow">
+                  <textarea id="message" name="message" class="input-control" placeholder="Message"></textarea>
+                </div> 
+            </div>
+            <div class="row">
+              <div class="submit-btn">
+                <button type="submit" class="btn-1 outer-shadow hover-in-shadow" id="popup-submit-btn">Send Message <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Popup Chat end -->
+
 
 
 <!-- Contact API js -->
