@@ -388,4 +388,67 @@ window.addEventListener("load", () =>{
   })
 
 
+//POopup Chat
+
+function toggleChat() {
+        const chatBox = document.getElementById('chatBox');
+        if (chatBox.style.display === "flex") {
+            chatBox.style.display = "none";
+        } else {
+            chatBox.style.display = "flex";
+        }
+    }
+
+
+  const popupScriptURL = 'https://script.google.com/macros/s/AKfycbzgF9JJsTAM2GbYdi5znsOoPh7cxo_JNaUGpwuOtqvHpgLN18vj_wJOTAf5A8MzdYF5/exec'
+  const popupForm = document.getElementById('popup-contact-form')
+  const popupBtn = document.getElementById('popup-submit-btn')
+
+  popupForm.addEventListener('submit', e => {
+    e.preventDefault()
+    
+    // বাটন ডিসেবল করা এবং লোডিং স্টেট দেখানো
+    popupBtn.disabled = true
+    const originalBtnText = popupBtn.innerHTML
+    popupBtn.innerHTML = "Sending... ⏳"
+
+    fetch(popupScriptURL, { method: 'POST', body: new FormData(popupForm)})
+      .then(response => {
+        // সুন্দর কাস্টম অ্যালার্ট (SweetAlert2)
+        Swal.fire({
+          title: 'Success!',
+          text: 'ধন্যবাদ! আপনার মেসেজটি সফলভাবে আমাদের কাছে পৌঁছেছে।',
+          icon: 'success',
+          confirmButtonText: 'ঠিক আছে',
+          confirmButtonColor: '#ff7696', // আপনার থিমের পিঙ্ক কালার
+          background: '#ffffff',
+          showClass: {
+            popup: 'animate__animated animate__fadeInUp animate__faster' // মসৃণ অ্যানিমেশন
+          },
+          hideClass: {
+            popup: 'animate__animated animate__fadeOutDown animate__faster'
+          }
+        });
+        
+        // বাটন ও ফর্ম আগের অবস্থায় ফিরিয়ে আনা
+        popupBtn.disabled = false
+        popupBtn.innerHTML = originalBtnText
+        popupForm.reset() // ইনপুট বক্স খালি করা
+        
+        // যদি মেসেজ পাঠানোর পর পপ-আপ উইন্ডোটি অটোমেটিক বন্ধ করতে চান, 
+        // তবে আপনার পপ-আপ ক্লোজ করার ফাংশনটি এখানে কল করতে পারেন।
+      })
+      .catch(error => {
+        console.error('Error!', error.message)
+        Swal.fire({
+          title: 'Error!',
+          text: 'দুঃখিত, কিছু একটা সমস্যা হয়েছে। আবার চেষ্টা করুন।',
+          icon: 'error',
+          confirmButtonText: 'ঠিক আছে',
+          confirmButtonColor: '#ff7696'
+        });
+        popupBtn.disabled = false
+        popupBtn.innerHTML = originalBtnText
+      })
+  })
 
