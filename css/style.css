@@ -1333,7 +1333,109 @@ html::-webkit-scrollbar-thumb{
 }
 
 
+/*-------------- Popup contact section --------------*/
 
+    .chat-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: var(--skin-color); 
+        color: white;
+        padding: 10px 25px;
+        border-radius: 10px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 500;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        z-index: 999;
+    }
+
+    
+    .chat-box {
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        width: 320px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+        display: none; /* শুরুতে লুকানো থাকবে */
+        flex-direction: column;
+        overflow: hidden;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        z-index: 1000;
+    }
+
+    .chat-header {
+        background: var(--skin-color);
+        padding: 0px 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #eee;
+        color: var(--text-black-600);
+    }
+.chat-header h4{
+	font-weight: bold;
+}
+    .close-btn {
+        cursor: pointer;
+        font-size: 25px;
+        color: var(--text-black-600);
+     }
+
+    .chat-content {
+        height: 300px;
+        padding: 15px;
+        background: #fff;
+        overflow-y: auto;
+    }
+
+ 
+.chat-footer button {
+        background: none;
+        border: none;
+        color: #e31a2b;
+        font-size: 20px;
+        margin-left: 10px;
+        cursor: pointer;
+}
+.chat-content .input-group{
+	margin: 0 0 15px;
+	transition: all 0.3s ease;
+	border-radius: 30px;
+	width: 100%;
+}
+.chat-content .input-group:after{
+	border-radius: 30px;
+}
+.chat-content .input-group .input-control{
+	height: 40px;
+	display: block;
+	width: 100%;
+	border-radius: 30px;
+	border: none;
+	background-color: transparent;
+	font-size: 16px;
+	padding: 0 15px;
+	color: var(--text-black-700);
+}
+.chat-content .input-group textarea.input-control{
+	height: 84px;
+	padding-top: 15px;
+	resize: none;
+}
+.chat-content .submit-btn{
+	flex: 0 0 100%;
+	max-width: 100%;
+	text-align: right;
+	padding: 0 15px;
+}
+
+/*-------------- Popup contact section --------------*/
 
 
 
