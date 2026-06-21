@@ -1376,7 +1376,7 @@ html::-webkit-scrollbar-thumb{
         justify-content: space-between;
         align-items: center;
         border-bottom: 1px solid #eee;
-        color: var(--text-black-600);
+        color: white;
     }
 .chat-header h4{
 	font-weight: bold;
@@ -1384,7 +1384,7 @@ html::-webkit-scrollbar-thumb{
     .close-btn {
         cursor: pointer;
         font-size: 25px;
-        color: var(--text-black-600);
+        color: white;
      }
 
     .chat-content {
